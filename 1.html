@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+      :root {
+        --color-1: #000000;
+        --color-2: #27b9c2;
+        --color-3: #2c2c2c;
+        --color-4: #333333;
+        --color-5: #35cfed;
+        --color-6: #38d5f4;
+        --color-7: #7bc424;
+        --color-8: #8166b0;
+        --color-9: #8f76bc;
+        --color-10: #93b6b7;
+        --color-11: #9fa3a7;
+        --color-12: #f05638;
+        --color-13: #f7f8f9;
+        --color-14: #fa684f;
+        --color-15: #ffc80a;
+        --color-16: #fffbfb;
+        --color-17: #ffffff;
+      }
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Open Sans", serif;
+      }
+      #container {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 0.5fr;
+        justify-content: center;
+      }
+
+      @keyframes shake{
+        0%{
+          transform: translateX(0);
+        }
+        25%{
+          transform: translateX(-10px);
+        }
+        50%{
+          transform: translateX(5px);
+        }
+        75%{
+          transform: translateX(-10px);
+        }
+        100%{
+          transform: translateX(0);
+        }
+
+      }
+       #container > div img{
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+       }
+        #container > div img:hover{
+          animation: shake 1s ease-in-out infinite;
+       }
+      #container > div:nth-child(1) p {
+        color: var(--color-11);
+      }
+      #container > div:nth-child(1) h3 {
+        color: var(--color-4);
+        line-height: 2rem;
+      }
+      #container > div:nth-child(1) {
+        background-color: var(--color-17);
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 2rem;
+      }
+
+      #container > div:nth-child(2) {
+        grid-column-start: 2;
+        grid-column-end: span 1;
+        grid-row-start: 1;
+        grid-row-end: span 1;
+        background-color: #fffbfb;
+        padding: 3rem;
+      }
+      #container > div:nth-child(3) {
+        grid-column-start: 3;
+        grid-column-end: span 2;
+        grid-row-start: 1;
+        grid-row-end: span 1;
+        background-color: #f7f8f9;
+        padding: 2rem;
+        text-align: center;
+      }
+      #container > div:nth-child(3) a {
+        color: var(--color-6);
+        text-decoration: underline;
+      }
+      #container > div:nth-child(3) :nth-child(1) {
+        color: var(--color-11);
+        
+      }
+       #container > div:nth-child(3) :nth-child(2) {
+        color: var(--color-4);
+        
+      }
+      #container > div:nth-child(3) :nth-child(2) {
+        font-size: 2.5rem;
+      }
+      #container > div:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        background-color: #f05638;
+        padding: 2rem;
+        text-align: center;
+      }
+      #container > div:nth-child(4) h3 {
+        color: var(--color-17);
+      }
+      #container > div:nth-child(4) p {
+        color: var(--color-15);
+        
+      }
+      #container > div:nth-child(5) {
+      
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: var(--color-17);
+        padding: 2rem;
+        text-align: center;
+      }
+      #container > div:nth-child(5) :nth-child(1) {
+        color: var(--color-11);
+        letter-spacing: 0.4rem;
+      }
+      #container > div:nth-child(5) :nth-child(2) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      #container > div:nth-child(6) {
+       
+        grid-column: 3/4;
+        grid-row: 2/3;
+        background-color: var(--color-17);
+        padding: 2rem 0;
+      }
+      #container > div:nth-child(6) :nth-child(1) {
+        color: var(--color-11);
+        font-size: 1.1rem;
+      }
+      #container > div:nth-child(6) :nth-child(2) {
+        color: var(--color-2);
+        letter-spacing: 0.3rem;
+        padding: 1rem 0;
+      }
+      #container > div:nth-child(6) p:nth-child(2) i {
+        color: var(--color-2);
+      }
+      #container .contain-7-violet-circle{
+        width: 23.5vw;
+        height: 23.5vw;
+        background-color: var(--color-8);
+        border-radius: 50%;
+        position: absolute;
+        top: 5vh;
+        left: 0.75vw;
+      }
+      #container .d-flex-violet-circle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #container > div:nth-child(7) p {
+       color: var(--color-17);
+       margin: 2rem 0;
+       padding: 0;
+      }
+      #container > div:nth-child(7) p:nth-child(1) {
+       background-color: var(--color-9);
+       padding: 0.8rem;
+       border-radius: 1.5rem;
+      }
+
+       #container > div:nth-child(7) {
+        grid-column: 4/5;
+        grid-row: 2/3;
+        background-color: var(--color-9);
+        overflow: visible;
+        
+      }
+        #container > div:nth-child(7) :nth-child(1) i {
+        color: var(--color-15);
+        margin-right: 0.5rem;
+      }
+     
+      #container > div:nth-child(8){
+        grid-column: 1/2;
+        grid-row: 3 / 4;
+        background-color: var(--color-17);
+        padding: 1rem;
+        text-align: center;
+      }
+      #container > div:nth-child(8) a{
+        color: var(--color-2);
+        text-decoration: none;
+        letter-spacing: 0.1rem;
+        display: inline-block;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+      }
+
+       #container > div:nth-child(8) p{
+        font-size: 1.3rem;
+        color: var(--color-4);
+        letter-spacing: 0.08rem;
+      }
+       #container > div:nth-child(9){
+        grid-column: 2/4;
+        grid-row: 3/4;
+        background-color: var(--color-10);
+        padding: 1rem;
+        position: relative;
+      }
+      .contain9-img2{
+        position: absolute;
+        top: 45%;
+        right: 20%;
+      }
+
+      #container > div:nth-child(9) span{
+        background-color: var(--color-14);
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        border-radius: 1rem;
+        color: var(--color-13);
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        
+      }
+      .contain-9{
+        text-align: center;
+      }
+
+      .contain-9 p{
+        color: var(--color-17);
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 600;
+      }
+        #container > div:nth-child(10){
+        grid-column: 4/5;
+        grid-row: 3/4;
+        background-color: var(--color-9);
+        padding: 1rem;
+        text-align: center;
+      }
+       #container > div:nth-child(10) a{
+        color: var(--color-1);
+        text-decoration: none;
+        background-color: var(--color-15);
+        padding: 1.3rem;
+        border-radius: 2rem;
+        display: inline-block;
+        margin-top: 1rem;
+        letter-spacing: 0.2rem;
+        font-weight: 600;
+      }
+      #container > div:nth-child(10) p{
+        color: var(--color-16);
+        line-height: 1.7rem;
+        margin: 0;
+     
+      }
+       #container > div:nth-child(10) h3{
+        color: var(--color-16);
+        padding: 1rem 0;
+     
+      }
+
+       #container > div:nth-child(11){
+        grid-column: 1/2;
+        grid-row: 4/5;
+        background-color: var(--color-6);
+        padding: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contain-11-circle-blue{
+        width: 17vw;
+        height: 17vw;
+        background-color: var(--color-5);
+        border-radius: 50%;
+        position: absolute;
+        top: -1vh;
+        left: 5vw;
+      }
+      #container .contain-11-para{
+        color: var(--color-17);
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+      #container .d-flex-contain-11{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #container > div:nth-child(12){
+        grid-column: 2/3;
+        grid-row: 4/5;
+        background-color: var(--color-17);
+        padding: 1rem;
+        text-align: center;
+      }
+      #container > div:nth-child(12) :nth-child(1){
+        color: var(--color-17);
+        background-color: var(--color-7);
+        display: inline-block;
+        margin: 0.5rem 0;
+        font-size: 0.6rem;
+        border-radius: 1rem;
+        padding: 1rem;
+        letter-spacing: 0.2rem;
+      }
+      #container > div:nth-child(12) :nth-child(2){
+        color: var(--color-4);
+        font-size: 1.7rem;
+        margin: 0.5rem 0;
+      }
+
+      #container > div:nth-child(13){
+        grid-column: 3/5;
+        grid-row: 4/5;
+        background-color: var(--color-4);
+        padding: 1rem;
+      }
+      #container .d-flex{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #container > div:nth-child(13) p{
+       color: var(--color-16);
+       font-size: 1.5rem;
+       line-height: 2.2rem;
+      }
+       #container .contain-7{
+        position: relative;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="contain-1">
+        <p>IPHONE 65</p>
+        <h3>3D Touch. 12MP Photo. 4k video.One Powerful Photo</h3>
+        <p>Learn more or visit an Apple Store today</p>
+      </div>
+      <div>
+        <img src="./pics/4.png" alt="" height="250px" />
+      </div>
+      <div>
+        <p>LEARN MORE</p>
+        <p>How to Use Rotary Evaporator in Chemical Labs</p>
+        <a href="#">Download now</a>
+      </div>
+      <div>
+        <img src="./pics/8.png" alt="" width="300px" />
+        <h3>Our Brand New Keyboard</h3>
+        <p>LEARN <i class="fa-solid fa-chevron-right"></i></p>
+      </div>
+      <div>
+        <p>IMAC.RETINA</p>
+        <p>Hardly a month <br />passes these <br />days where</p>
+        <img src="./pics/11.png" alt="" height="110px" />
+      </div>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut non sit
+          quam optio sunt exercitationem eveniet. Provident in consequatur
+          voluptatibus!
+        </p>
+        <p>DOWNLOAD NOW <i class="fa-solid fa-chevron-right"></i></p>
+      </div>
+      <div class="contain-7">
+        <div class="contain-7-violet-circle d-flex-violet-circle" >
+          <p><i class="fa-solid fa-flag"></i></i>POPULAR</p>
+          <img src="./pics/7.png" alt="" width="150px" />
+          <p>MEET</p> 
+        </div>
+      </div>
+      <div>
+        <img src="./pics/6.png" alt="" width="150px">
+        <p>Game ourpasion</p>
+        <a href="#">Learn <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <div>
+        <span>BEST CHOICE</span>
+          <div class="contain-9">
+            <p>Much MuchBetter <br> Experience<p>
+            <img class="contain9-img1" src="./pics/3.png" alt="" width="550">
+            <img class="contain9-img2" src="./pics/2.png" alt="" width="550">
+          </div>
+      </div>
+      <div>
+          <div class="d-flex-violet-circle" >
+            <h3>icloud</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
+            voluptas quisquam inventore, laudantium distinctio architecto vero
+            laboriosam aperiam? Fuga, doloremque.
+          </p>
+          <a href="#">LEARN MORE</a>
+        </div>
+      </div>
+      <div>
+         <div class="contain-11-circle-blue d-flex-contain-11">
+          <img class="contain-11-twitter" src="./pics/5.png" alt="" width="50px">
+          <p class="contain-11-para">Connect With <br>Twitter</p>
+        </div>
+      </div>
+      <div>
+         <p>POPULAR</p>
+        <P>Much MuchBetter <br> Experience</P>
+      </div>
+      <div class="d-flex">
+        <img src="./pics/9.png" alt="" width="200px">
+        <p>More than just a <br> display, it's vision</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+     
+
+
+       
